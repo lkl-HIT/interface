@@ -1,0 +1,47 @@
+/project_root
+|
+|-- app.py
+|   |-- 作用: 主应用程序入口，窗口和菜单管理器。
+|   |-- 结构: 包含 `App` 类 (继承 `tk.Tk`)。负责初始化窗口、创建主菜单栏、管理*主界面 Frame*，并通过 `show_frame` 切换界面。菜单命令负责调用 `MainScreen` 的方法或直接显示某些窗口。
+|
+|-- login_screen.py
+|   |-- 作用: 实现登录界面 (参照 `GUI_group1/登录界面.jpg`)。
+|   |-- 结构: 包含 `LoginScreen` 类 (继承 `ttk.Frame`)。使用标准控件和 `grid` 布局构建。处理登录/取消逻辑。
+|
+|-- main_screen.py
+|   |-- 作用: 实现核心操作主界面 (参照 `GUI_group1/主界面.jpg`)。
+|   |-- 结构: 包含 `MainScreen` 类 (继承 `ttk.Frame`)。使用 `grid` 布局组织各区域。**包含 `open_data_query_window` 方法来创建和管理数据查询 Toplevel 窗口。** 按钮链接到控制器、此方法或其他操作。
+|
+|-- data_query_window.py
+|   |-- 作用: 实现弹出的数据查询 Toplevel 窗口。
+|   |-- 结构: 包含 `DataQueryWindow` 类 (继承 `tk.Toplevel`)。内部创建 `ttk.Notebook`，并加载 `PressureMachineScreen`, `UniversalMachineScreen`, `SamplingTestScreen` 作为标签页。
+|
+|-- pressure_machine_screen.py
+|   |-- 作用: 实现数据查询窗口中 "压力机数据" **标签页的内容** (参照 `GUI_group1/压力机数据.jpg`)。
+|   |-- 结构: 包含 `PressureMachineScreen` 类 (继承 `ttk.Frame`)。将使用 Tkinter 控件和 `matplotlib` 构建其 UI。
+|
+|-- universal_machine_screen.py
+|   |-- 作用: 实现数据查询窗口中 "万能机数据" **标签页的内容** (参照 `GUI_group1/数据查询界面-万能机数据.jpg`)。
+|   |-- 结构: 包含 `UniversalMachineScreen` 类 (继承 `ttk.Frame`)。将使用 Tkinter 控件构建其 UI。
+|
+|-- sampling_test_screen.py
+|   |-- 作用: 实现数据查询窗口中 "见证取样试验" **标签页的内容** (参照 `GUI_group1/见证取样试验界面.jpg`)。
+|   |-- 结构: 包含 `SamplingTestScreen` 类 (继承 `ttk.Frame`)。将使用 Tkinter 控件构建其 UI。
+|
+|-- continuous_sampling_window.py
+|   |-- 作用: 实现弹出的续采试验 Toplevel 窗口 (参照 `GUI_group1/续采试验.jpg`)。
+|   |-- 结构: 包含 `ContinuousSamplingWindow` 类 (继承 `tk.Toplevel`)。包含筛选区、未完成试验列表 (Treeview)、选中项详情显示区。
+|
+|-- requirements.txt
+|   |-- 作用: 列出项目所需的 Python 依赖库及其兼容版本号。
+|   |-- 内容: `matplotlib==2.2.5`, `pyinstaller==3.2.1`。
+|
+|-- README.md
+|   |-- 作用: 项目说明文件。详细说明项目目标、技术、结构、开发建议和依赖。
+|
+|-- GUI_group1/
+|   |-- 作用: 存放所有界面设计的**参考截图** (.jpg 文件)。
+|   |-- 内容: 登录界面.jpg, 主界面.jpg, 压力机数据.jpg, 数据查询界面-万能机数据.jpg, 见证取样试验界面.jpg, 续采试验.jpg
+|
+`-- project_structure.txt`
+    `-- 作用: 本文件，描述项目的文件结构和各文件用途。 
