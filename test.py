@@ -102,6 +102,7 @@ class ConcreteTestGUI:
         ttk.Radiobutton(curve_frame, text="是").pack(side=tk.LEFT)
         ttk.Radiobutton(curve_frame, text="否").pack(side=tk.LEFT)
 
+
     def create_bottom_buttons(self):
         bottom_frame = ttk.Frame(self.main_frame)
         bottom_frame.pack(fill=tk.X, pady=5)
